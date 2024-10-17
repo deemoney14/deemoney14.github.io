@@ -1,8 +1,8 @@
 ---
 title: "Project 1"
 collection: Projects
-#category: conferences
-permalink: /publication/2024-02-17-paper-title-number-4
+category: conferences
+#permalink: /publication/2024-02-17-paper-title-number-4
 excerpt: 'This project is about Deploying Wordpress server on EC2 '
 date: 2024-10-20
 #venue: 'GitHub Journal of Bugs'
