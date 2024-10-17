@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Welcome to my cloud Journey"
+title: "Welcome to my Cloud Journey"
 author_profile: true
 redirect_from: 
   - /about/
