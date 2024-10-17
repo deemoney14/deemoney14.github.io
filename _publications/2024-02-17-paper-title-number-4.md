@@ -1,6 +1,6 @@
 ---
 title: "Project 1"
-collection: publications
+collection: Pojects
 category: conferences
 permalink: /publication/2024-02-17-paper-title-number-4
 excerpt: 'This project is about Deploying Wordpress server on EC2 '
