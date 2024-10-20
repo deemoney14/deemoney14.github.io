@@ -11,13 +11,12 @@ venue: 'October'
 ---
 
 This is my first official project outside of class, inspired by online research. I decided to start with something that seemed simple—deploying WordPress on an EC2 instance. Sure, I could have done it easily via the AWS console, but where's the fun in that? Instead, I chose to use a cloud-agnostic tool called Terraform (oooo, scaryyyyy!).
-![Profile Image](../images/profile.png)
 
 
 My plan was to create an EC2 instance with an attached security group, use a user-data script to install WordPress, and deploy everything within the default VPC in the us-west-1 region. Sounded simple enough in my head.
 
 The first hurdle came when I discovered I had accidentally deleted my default VPC.  I could have switched to another region, but where’s the fun in that? Instead, I decided to create a new VPC from scratch. I set up the VPC with one subnet, one  (AZ), an (IGW), and the necessary route tables and associations. The Terraform documentation was key to getting this done.
-
+![Profile Image](../images/Picture1.png)
  
 With the VPC set up, it was time to provision my EC2 instance. This part was trickier than expected because I couldn’t find the user-data script to install WordPress. Thank you, ChatGPT! I finally got the script and also learned a neat trick: outputting the instance IP address directly in Terraform using: output "instance_ip" {
   value = aws_instance.web.public_ip
