@@ -23,7 +23,7 @@ With the VPC set up, it was time to provision my EC2 instance. This part was tri
 }
 
 This little trick saved me from having to hunt through the console for the IP address. My naming conventions still need some work, but I’m sure that will improve over time.
- 
+ ![Profile Image](../images/Picture2.png)
 
 Last part was suppose to be the easier, but I struggles only because I had too many options on the documents. I think was overwhelm and didn’t know which one to use. I used aws_security_group and also used aws_security_group_ingress_rules not knowing all I did was duplicate it. LOL. I rememver in class we used security_group_rule with aws_security_group, I didn’t go that route. Watched some youtube videos and reliazed that I can use include ingress  in aws_security_group. Now, terraform init, plan and apply. Everything is but I cant get ascess to my wordpress. I go over to the console and everything seems correct on my end. I remember from class if you have  issues with internet, its most likely resulting fromt eh secituty group. 
 
@@ -32,12 +32,14 @@ The last part was supposed to be the easiest—setting up the security group—b
 In class, we had used security_group_rule with aws_security_group, but I decided to do it my own way. After watching some YouTube tutorials, I realized I could include the ingress rules directly in the aws_security_group resource.
 
 With everything in place, I ran terraform init, plan, and apply. Everything deployed successfully, but I couldn’t access my WordPress site. After some head-scratching and double-checking in the AWS console, I remembered from class: if there are internet issues, it’s likely related to the security group.
-
+![Profile Image](../images/Picture3.png)
 
 
 
  
-Sure enough, my security group had no outbound rules. I quickly added an egress rule, and...  
+Sure enough, my security group had no outbound rules. I quickly added an egress rule, and... 
+![Profile Image](../images/Picture4.png)
 Look at this now—WordPress is up and running! 🚀  
+![Profile Image](../images/Picture5.png)
 I terraform destroyed to save on cost.
 
