@@ -39,6 +39,7 @@ With everything in place, I ran terraform init, plan, and apply. Everything depl
  
 Sure enough, my security group had no outbound rules. I quickly added an egress rule, and... 
 ![Profile Image](../images/Picture4.png)
+
 Look at this now—WordPress is up and running! 🚀  
 ![Profile Image](../images/Picture5.png)
 I terraform destroyed to save on cost.
