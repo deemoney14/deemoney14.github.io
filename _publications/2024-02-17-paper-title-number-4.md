@@ -11,7 +11,7 @@ venue: 'October'
 ---
 
 This is my first official project outside of class, inspired by online research. I decided to start with something that seemed simple—deploying WordPress on an EC2 instance. Sure, I could have done it easily via the AWS console, but where's the fun in that? Instead, I chose to use a cloud-agnostic tool called Terraform (oooo, scaryyyyy!).
-![Alt Text](../assets/image-file-name.png)
+![Profile Image](../images/profile.png)
 
 
 My plan was to create an EC2 instance with an attached security group, use a user-data script to install WordPress, and deploy everything within the default VPC in the us-west-1 region. Sounded simple enough in my head.
