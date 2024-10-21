@@ -13,7 +13,7 @@ venue: 'October'
 This is my first official project outside of class, inspired by online research. I decided to start with something that seemed simple—deploying WordPress on an EC2 instance. Sure, I could have done it easily via the AWS console, but where's the fun in that? Instead, I chose to use a cloud-agnostic tool called Terraform (oooo, scaryyyyy!).
 
 
-My plan was to create an EC2 instance with an attached security group, use a user-data script to install WordPress, and deploy everything within the default VPC in the us-west-1 region. Sounded simple enough in my head.
+My plan was to create an EC2 instance with an attached security group, use a user-data script to install WordPress, and deploy everything within the default VPC in the US-West-1 region. it sounded simple enough in my head.
 
 The first hurdle came when I discovered I had accidentally deleted my default VPC.  I could have switched to another region, but where’s the fun in that? Instead, I decided to create a new VPC from scratch. I set up the VPC with one subnet, one  (AZ), an (IGW), and the necessary route tables and associations. The Terraform documentation was key to getting this done.
 ![Profile Image](../images/Picture1.png)
@@ -25,7 +25,7 @@ With the VPC set up, it was time to provision my EC2 instance. This part was tri
 This little trick saved me from hunting through the console for the IP address. My naming conventions still need some work, but I’m sure that will improve over time.
  ![Profile Image](../images/Picture2.png)
 
-Last part was supposed to be the easiest, but I struggled only because I had too many options on the documents. I think was overwhelmed and didn’t know which one to use. I used aws_security_group and also used ```aws_security_group_ingress_rules``` not knowing all I did was duplicate it. LOL. I remember in class we used ```security_group_rule with aws_security_group```, I didn’t go that route. Watched some YouTube videos and realized that I can use include ingress  in ```aws_security_group```. Now, terraform init, plan and apply. Everything is but I cant get access to my WordPress. I go over to the console and everything seems correct on my end. I remember from class if you have  issues with the internet, it's most likely resulting from the security group. 
+Last part was supposed to be the easiest, but I struggled only because I had too many documentation options. I think was overwhelmed and didn’t know which one to use. I used aws_security_group and also used ```aws_security_group_ingress_rules``` not knowing all I did was duplicate it. LOL. I remember in class we used ```security_group_rule with aws_security_group```, I didn’t go that route. Watched some YouTube videos and realized that I can use include ingress  in ```aws_security_group```. Now, terraform init, plan and apply. Everything is but I cant get access to my WordPress. I go over to the console and everything seems correct on my end. I remember from class if you have  issues with the internet, it's most likely resulting from the security group. 
 
 The last part was supposed to be the easiest—setting up the security group—but I ran into issues because I was overwhelmed with too many documentation options. At first, I used both ```aws_security_group``` and ```aws_security_group_ingress_rule```, not realizing I had essentially duplicated the same rules. LOL.
 
