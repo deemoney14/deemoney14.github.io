@@ -22,10 +22,10 @@ With the VPC set up, it was time to provision my EC2 instance. This part was tri
   value = aws_instance.web.public_ip
 }```
 
-This little trick saved me from having to hunt through the console for the IP address. My naming conventions still need some work, but I’m sure that will improve over time.
+This little trick saved me from hunting through the console for the IP address. My naming conventions still need some work, but I’m sure that will improve over time.
  ![Profile Image](../images/Picture2.png)
 
-Last part was suppose to be the easier, but I struggles only because I had too many options on the documents. I think was overwhelm and didn’t know which one to use. I used aws_security_group and also used aws_security_group_ingress_rules not knowing all I did was duplicate it. LOL. I rememver in class we used security_group_rule with aws_security_group, I didn’t go that route. Watched some youtube videos and reliazed that I can use include ingress  in aws_security_group. Now, terraform init, plan and apply. Everything is but I cant get ascess to my wordpress. I go over to the console and everything seems correct on my end. I remember from class if you have  issues with internet, its most likely resulting fromt eh secituty group. 
+Last part was supposed to be the easiest, but I struggled only because I had too many options on the documents. I think was overwhelmed and didn’t know which one to use. I used aws_security_group and also used aws_security_group_ingress_rules not knowing all I did was duplicate it. LOL. I remember in class we used security_group_rule with aws_security_group, I didn’t go that route. Watched some YouTube videos and realized that I can use include ingress  in aws_security_group. Now, terraform init, plan and apply. Everything is but I cant get access to my WordPress. I go over to the console and everything seems correct on my end. I remember from class if you have  issues with the internet, it's most likely resulting from the security group. 
 
 The last part was supposed to be the easiest—setting up the security group—but I ran into issues because I was overwhelmed with too many documentation options. At first, I used both aws_security_group and aws_security_group_ingress_rule, not realizing I had essentially duplicated the same rules. LOL.
 
