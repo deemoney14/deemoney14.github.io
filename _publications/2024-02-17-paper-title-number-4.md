@@ -42,5 +42,5 @@ Sure enough, my security group had no outbound rules. I quickly added an egress 
 
 Look at this now—WordPress is up and running! 🚀  
 ![Profile Image](../images/Picture5.png)
-I terraform destroyed to save on cost.
+This is my command to clean resources: terraform destroy . This way I save on cost.
 
