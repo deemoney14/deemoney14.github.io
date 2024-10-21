@@ -18,9 +18,9 @@ My plan was to create an EC2 instance with an attached security group, use a use
 The first hurdle came when I discovered I had accidentally deleted my default VPC.  I could have switched to another region, but where’s the fun in that? Instead, I decided to create a new VPC from scratch. I set up the VPC with one subnet, one  (AZ), an (IGW), and the necessary route tables and associations. The Terraform documentation was key to getting this done.
 ![Profile Image](../images/Picture1.png)
  
-With the VPC set up, it was time to provision my EC2 instance. This part was trickier than expected because I couldn’t find the user-data script to install WordPress. Thank you, ChatGPT! I finally got the script and also learned a neat trick: outputting the instance IP address directly in Terraform using: output "instance_ip" {
+With the VPC set up, it was time to provision my EC2 instance. This part was trickier than expected because I couldn’t find the user-data script to install WordPress. Thank you, ChatGPT! I finally got the script and also learned a neat trick: outputting the instance IP address directly in Terraform using:``` output "instance_ip" {
   value = aws_instance.web.public_ip
-}
+}```
 
 This little trick saved me from having to hunt through the console for the IP address. My naming conventions still need some work, but I’m sure that will improve over time.
  ![Profile Image](../images/Picture2.png)
