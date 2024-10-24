@@ -14,7 +14,7 @@ venue: 'October'
 In this project, I focused on using the AWS CLI to create two S3 buckets, upload files to one, and transfer those files to another bucket.
 
 
-#Step 1: Creating the S3 Buckets
+Step 1: Creating the S3 Buckets
 I created two S3 buckets: ```sam-sa-gh-test1``` and ```sam-sa-gh-test2```, using Terraform documentation to set them up.
 
 Step 2: Uploading Files to the First Bucket
