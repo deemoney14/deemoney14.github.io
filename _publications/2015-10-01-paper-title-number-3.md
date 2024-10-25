@@ -1,7 +1,7 @@
 ---
 title: "Project 2: Manipulating S3 Buckets"
 collection: publications
-category: manuscripts
+#category: manuscripts
 permalink: /publication/2015-10-01-paper-title-number-3
 excerpt: 'Two S3 buckets, uploaded files, and copied them between buckets using AWS CLI.'
 date: 2024-10-01
