@@ -14,7 +14,7 @@ citation: 'Your Name, You. (2015). &quot;Paper Title Number 3.&quot; <i>Journal 
 In this project, I focused on using the AWS CLI to create two S3 buckets, upload files to one, and transfer those files to another bucket.
 I created two S3 buckets: ```sam-sa-gh-test1``` and ```sam-sa-gh-test2```, using Terraform documentation to set them up.
 ![Profile Image](../images/Pic1.png) ![Profile Image](../images/Pic2.png)
-I uploaded files into ```sam-sa-gh-test``` using the CLI command ``` aws s3 cp /your saved file s3://sam-sa-gh-test1 --recursive```. This command uploads files from a directory. I also discovered the ```sync``` command for updating only new or modified files: ```aws s3 sync /your saved file s3://sam-sa-gh-test1 --recursive```. 
+I uploaded files into ```sam-sa-gh-test``` using the CLI command ``` aws s3 cp /your saved file s3://sam-sa-gh-test1 --recursive```. This command uploads files from a directory. I also discovered the ```Datasync``` command for updating only new or modified files: ```aws s3 sync /your saved file s3://sam-sa-gh-test1 --recursive```. 
 ![Profile Image](../images/Pict3.png)
 Next i copies the files from ```sam-sa-gh-test1``` to ```sam-sa-gh-test2``` using: ``` aws s3 cp s3://sam-sa-gh-test1/mypic s3://sam-sa-gh-test2/mypic --recursive```You can use the ```Datasync``` to managed updates between the two buckets. 
 ![Profile Image](../images/Pict4.png)
