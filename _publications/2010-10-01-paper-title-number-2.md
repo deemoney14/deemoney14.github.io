@@ -19,6 +19,7 @@ For secure access to the instance, I decided to create my own key pair with the 
 
 This provided both my public and private keys, essential for SSH access to the instance. With the security group configured and Terraform initialized, planned, and applied, my first web server was up and running. However, I couldn’t access it over the web. I double-checked everything—route tables, internet gateway (IGW), and security group rules—but still no luck. I could SSH in and ping external sites, so internet connectivity was active.
 
+
 After reaching out to “Toku” for advice, I decided to destroy the instance and start fresh. This time, I realized the issue was with the user data script, which hadn’t initialized on the previous instance. Once I restarted, everything worked as expected.
 
 Next, I tackled the AMI replication. Copying the AMI to a different region in the console was straightforward, and deploying it in us-east-1a using Terraform became simpler once I learned to use an alias to distinguish between us-west and us-east. Using ```aws_ami_copy,`` I created a snapshot in us-east. To reference the default VPC and subnet, I used data ```aws_vpc```and data ```aws_subnet``` with filters for the specific AZ, which helped me refine the target setup.
