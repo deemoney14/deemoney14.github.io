@@ -23,7 +23,7 @@ This provided both my public and private keys, essential for SSH access to the i
 After reaching out to “Toku” for advice, I decided to destroy the instance and start fresh. This time, I realized the issue was with the user data script, which hadn’t initialized on the previous instance. Once I restarted, everything worked as expected.
 ![Profile Image](../images/P2.png) ![Profile Image](../images/P3.png) ![Profile Image](../images/P4.png) ![Profile Image](../images/P5.png)
 
-Next, I tackled the AMI replication. Copying the AMI to a different region in the console was straightforward, and deploying it in us-east-1a using Terraform became simpler once I learned to use an alias to distinguish between us-west and us-east. Using ```aws_ami_copy,`` I created a snapshot in us-east. To reference the default VPC and subnet, I used data ```aws_vpc```and data ```aws_subnet``` with filters for the specific AZ, which helped me refine the target setup.
+Next, I tackled the AMI replication. Copying the AMI to a different region in the console was straightforward, and deploying it in us-east-1a using Terraform became simpler once I learned to use an alias to distinguish between ```us-west and us-east```. Using ```aws_ami_copy,`` I created a snapshot in us-east. To reference the default VPC and subnet, I used ```data aws_vpc```and ```data aws_subnet``` with filters for the specific AZ, which helped me refine the target setup.
 
 Finally, I replaced the AMI in my EC2 configuration with the copy from us-west-1, verifying that the user data script ran and displayed the expected content in the new instance.
 ![Profile Image](../images/P6.png) ![Profile Image](../images/P7.png) ![Profile Image](../images/P8.png)
