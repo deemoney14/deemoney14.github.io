@@ -39,16 +39,19 @@ I started by provisioning a VPC with the subnets as planned. Then, I launched th
                     3. Configuring the Application Load Balancer (ALB)
                     
 To make WordPress accessible, I deployed an Application Load Balancer (ALB) in the public subnet: The ALB directs traffic to the Target Group, which contains my private EC2 instances.I set up health checks to ensure only healthy instances serve traffic. Everything seemed to be set up correctly, so I ran: ```terraform init```, ```terraform plan``` and ```terraform apply```.
+
 At this point, I was able to access the ALB’s DNS in my browser, but I kept getting a ```502 Bad Gateway``` error. After some digging, I realized the issue: my private EC2 instances couldn’t connect to the internet.
 
                         4. Adding the ```NAT Gateway```
+                        
 The solution was to add a NAT Gateway: I placed the NAT Gateway in the public subnet. Updated the ```Route Tables``` for my private subnets to allow outbound traffic through the NAT Gateway.
 
 This change allowed the private instances to reach the internet for updates and plugin installations. After updating the configurations, I ran Terraform again, and it finally worked—I could access WordPress via the ALB without issues!
                         
                         5. Deploying the RDS Database
                         
-Next up was setting up a MySQL RDS database: I created an RDS Subnet Group to define which subnets my RDS instance would use. Added a Security Group to allow traffic only from the WordPress instances (on port 3306).Again, I ran:  ```terraform init```, ```terraform plan``` and ```terraform apply```. And just like that, my RDS instance was up and running, securely tucked away in the private subnets.
+Next up was setting up a MySQL RDS database: I created an RDS Subnet Group to define which subnets my RDS instance would use. Added a Security Group to allow traffic only from the WordPress instances (on port 3306).Again, I ran:  ```terraform init```, ```terraform plan``` and ```terraform apply```. 
+And just like that, my RDS instance was up and running, securely tucked away in the private subnets.
 
                                               Lessons Learned
                                               
