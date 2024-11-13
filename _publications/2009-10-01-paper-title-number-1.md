@@ -68,6 +68,6 @@ o	Control access using Security Groups to ensure only necessary traffic gets thr
 
 o	For future projects, I'll use AWS Secrets Manager or KMS for managing sensitive information like database credentials.
 
-4. The Power of Persistence: Debugging was challenging, especially with the 502 errors, but I learned that sometimes, you need to destroy and redeploy resources to get things working. And don’t be afraid to ask for help or dive into documentation and tutorials.
+The Power of Persistence: Debugging was challenging, especially with the 502 errors, but I learned that sometimes, you need to destroy and redeploy resources to get things working. And don’t be afraid to ask for help or dive into documentation and tutorials.
 
     
