@@ -28,7 +28,7 @@ I followed a ```six-subnet``` setup across two AZs:
 •	2 Public Subnets (1 in each AZ) for ALB and Bastion Host.
 
 •	4 Private Subnets (2 in each AZ) for the EC2 Instances and RDS Database.
-![Profile Image](../images/Pc1.png)
+![Profile Image](../images/Pc11.png)
 
 Learning from "Tokugero," I realized the importance of drawing out my architecture. It helped me visualize the different components and how they would connect, which is crucial for a scalable design.
                   
@@ -45,19 +45,19 @@ At this point, I was able to access the ALB’s DNS in my browser, but I kept ge
                         4. Adding the ```NAT Gateway```
                         
 The solution was to add a NAT Gateway: I placed the NAT Gateway in the public subnet. Updated the ```Route Tables``` for my private subnets to allow outbound traffic through the NAT Gateway.
-![Profile Image](../images/Pc2.png)
-![Profile Image](../images/Pc3.png)
+![Profile Image](../images/Pc21.png)
+![Profile Image](../images/Pc31.png)
 
 This change allowed the private instances to reach the internet for updates and plugin installations. After updating the configurations, I ran Terraform again, and it finally worked—I could access WordPress via the ALB without issues!
-![Profile Image](../images/Pc4.png)
+![Profile Image](../images/Pc41.png)
                         
                         5. Deploying the RDS Database
                         
 Next up was setting up a MySQL RDS database: I created an RDS Subnet Group to define which subnets my RDS instance would use. Added a Security Group to allow traffic only from the WordPress instances (on port 3306).Again, I ran:  ```terraform init```, ```terraform plan``` and ```terraform apply```. 
-![Profile Image](../images/Pc5.png)
+![Profile Image](../images/Pc51.png)
 And just like that, my RDS instance was up and running, securely tucked away in the private subnets.
-![Profile Image](../images/Pc6.png)
-![Profile Image](../images/Pc7.png)
+![Profile Image](../images/Pc61.png)
+![Profile Image](../images/Pc71.png)
                                               Lessons Learned
                                               
                                               
