@@ -28,7 +28,8 @@ I followed a ```six-subnet``` setup across two AZs:
 •	2 Public Subnets (1 in each AZ) for ALB and Bastion Host.
 
 •	4 Private Subnets (2 in each AZ) for the EC2 Instances and RDS Database.
-![Profile Image](../images/Pc1.png)
+![Profile Image](https://raw.githubusercontent.com/deemoney14/deemoney14.github.io/master/images/Pc1.png)
+
 
 Learning from "Tokugero," I realized the importance of drawing out my architecture. It helped me visualize the different components and how they would connect, which is crucial for a scalable design.
                   
