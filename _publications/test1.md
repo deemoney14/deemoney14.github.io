@@ -14,7 +14,9 @@ venue: 'November'
 Scenario:
 
 StartupCo, a fast-growing tech startup, recently launched a fitness tracking app and has been using AWS for three months. To meet their launch deadlines, all 10 employees have been sharing the AWS root account credentials to manage cloud resources. Now that the product is live, their CTO realizes the security risks of this practice and wants to address cloud security fundamentals.
-Current Setup
+
+                                    Current Setup
+
 Current Infrastructure
 •	Everyone uses the root account.
 •	No separate permissions for different teams.
@@ -27,9 +29,12 @@ o	RDS database for user information.
 o	CloudWatch for monitoring several development and production environments.
 ________________________________________
 Step 1: Drawing the Current Infrastructure
+
 pic1
 Step 2: Proposed Improvements
 pic2
+
+
 To address the issues and improve the current infrastructure, I implemented the following:
 1. Secure Infrastructure Setup with a 3-Tier Architecture
 I restructured the infrastructure into a 3-tier architecture distributed across two Availability Zones (AZs) for improved scalability, resiliency, and high availability.
@@ -37,12 +42,13 @@ I restructured the infrastructure into a 3-tier architecture distributed across 
 •	Private Subnet 1: Hosts the web server and fitness application.
 •	Private Subnet 2: Hosts the RDS database.
 The fitness app is now accessed exclusively through the ALB, which routes traffic to the target groups in the private subnet.
+
 pic3
-2. Secure Secrets Management
+3. Secure Secrets Management
 Previously, I included database credentials directly in the application code. To improve security, I implemented AWS Secrets Manager to store sensitive information securely. Credentials are decoded dynamically using:
 ```jsondecode(aws_secretsmanager_Secret_version.<name_your_cred>.secret_string)```
 pic4
-3. Configuring S3 and CloudWatch in the VPC
+4. Configuring S3 and CloudWatch in the VPC
 To enhance security and monitoring, I configured:
 •	S3: Created an S3 bucket and an Endpoint Gateway, then connected it to the private route table via route_table_ids.
 •	IAM Role for EC2: Created a policy to allow S3 and CloudWatch access. I also added an Instance Profile to EC2 with full permissions for S3.
