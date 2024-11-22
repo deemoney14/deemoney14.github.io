@@ -29,18 +29,22 @@ o	RDS database for user information.
 o	CloudWatch for monitoring several development and production environments.
 ________________________________________
 Step 1: Drawing the Current Infrastructure
-![Profile Image](../images/Picture1.png)
+
 
 Step 2: Proposed Improvements
-![Profile Image](../images/Picture2.png)
 
 
 To address the issues and improve the current infrastructure, I implemented the following:
 1. Secure Infrastructure Setup with a 3-Tier Architecture
+
 I restructured the infrastructure into a 3-tier architecture distributed across two Availability Zones (AZs) for improved scalability, resiliency, and high availability.
+
 •	Public Subnet: Contains an Application Load Balancer (ALB) to route traffic securely.
+
 •	Private Subnet 1: Hosts the web server and fitness application.
+
 •	Private Subnet 2: Hosts the RDS database.
+
 The fitness app is now accessed exclusively through the ALB, which routes traffic to the target groups in the private subnet.
 
 pic3
