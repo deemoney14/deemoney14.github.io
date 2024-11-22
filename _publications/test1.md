@@ -29,7 +29,7 @@ o	RDS database for user information.
 o	CloudWatch for monitoring several development and production environments.
 ________________________________________
 Step 1: Drawing the Current Infrastructure
-!(../images/Picture1.png)
+![images](../images/Picture1.png)
 
 Step 2: Proposed Improvements
 
