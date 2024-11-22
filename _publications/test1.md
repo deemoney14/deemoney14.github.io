@@ -11,9 +11,8 @@ venue: 'November'
 #citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
 
-Architecture Overview
-
 Scenario:
+
 StartupCo, a fast-growing tech startup, recently launched a fitness tracking app and has been using AWS for three months. To meet their launch deadlines, all 10 employees have been sharing the AWS root account credentials to manage cloud resources. Now that the product is live, their CTO realizes the security risks of this practice and wants to address cloud security fundamentals.
 Current Setup
 Current Infrastructure
