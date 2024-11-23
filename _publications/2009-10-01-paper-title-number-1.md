@@ -47,18 +47,20 @@ At this point, I was able to access the ALB’s DNS in my browser, but I kept ge
                         
 The solution was to add a NAT Gateway: I placed the NAT Gateway in the public subnet. Updated the ```Route Tables``` for my private subnets to allow outbound traffic through the NAT Gateway.
 ![Profile Image](/images/Pc2.png)
-![Profile Image](../images/Pc3.png)
+![Profile Image](/images/Pc3.png)
 
 This change allowed the private instances to reach the internet for updates and plugin installations. After updating the configurations, I ran Terraform again, and it finally worked—I could access WordPress via the ALB without issues!
-![Profile Image](../images/Pc4.png)
+![Profile Image](/images/Pc4.png)
                         
                         5. Deploying the RDS Database
                         
-Next up was setting up a MySQL RDS database: I created an RDS Subnet Group to define which subnets my RDS instance would use. Added a Security Group to allow traffic only from the WordPress instances (on port 3306).Again, I ran:  ```terraform init```, ```terraform plan``` and ```terraform apply```. 
-![Profile Image](../images/Pc5.png)
+Next up was setting up a MySQL RDS database: I created an RDS Subnet Group to define which subnets my RDS instance would use. Added a Security Group to allow traffic only from the WordPress instances (on port 3306).
+Again, I ran:  ```terraform init```, ```terraform plan``` and ```terraform apply```. 
+![Profile Image](/images/Pc5.png)
 And just like that, my RDS instance was up and running, securely tucked away in the private subnets.
-![Profile Image](../images/Pc6.png)
-![Profile Image](../images/Pc7.png)
+
+![Profile Image](/images/Pc6.png)
+![Profile Image](/images/Pc7.png)
                                               Lessons Learned
                                               
                                               
@@ -72,7 +74,10 @@ o	Use ALB as the only entry point to your application.
 
 o	Control access using Security Groups to ensure only necessary traffic gets through.
 
-o	For future projects, I'll use AWS Secrets Manager or KMS for managing sensitive information like database credentials.
+            	                 For future projects, 
+
+
+I'll use AWS Secrets Manager or KMS for managing sensitive information like database credentials.
 
 The Power of Persistence: Debugging was challenging, especially with the 502 errors, but I learned that sometimes, you need to destroy and redeploy resources to get things working. And don’t be afraid to ask for help or dive into documentation and tutorials.
 
