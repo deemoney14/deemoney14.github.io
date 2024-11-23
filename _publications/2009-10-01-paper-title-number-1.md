@@ -46,7 +46,7 @@ At this point, I was able to access the ALB’s DNS in my browser, but I kept ge
                         4. Adding the ```NAT Gateway```
                         
 The solution was to add a NAT Gateway: I placed the NAT Gateway in the public subnet. Updated the ```Route Tables``` for my private subnets to allow outbound traffic through the NAT Gateway.
-![Profile Image](../images/Pc2.png)
+![Profile Image](/images/Pc2.png)
 ![Profile Image](../images/Pc3.png)
 
 This change allowed the private instances to reach the internet for updates and plugin installations. After updating the configurations, I ran Terraform again, and it finally worked—I could access WordPress via the ALB without issues!
