@@ -56,7 +56,9 @@ The fitness app is now accessed exclusively through the ALB, which routes traffi
                                     
 Previously, I included database credentials directly in the application code. 
 To improve security, I implemented AWS Secrets Manager to store sensitive information securely. Credentials are decoded dynamically using:
+
 ```jsondecode(aws_secretsmanager_Secret_version.<name_your_cred>.secret_string)```
+
 ![Profile Image](/images/ch7.png)
 ![Profile Image](/images/ch8.png)
 
