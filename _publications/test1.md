@@ -84,6 +84,7 @@ To establish least privilege access, I created specific IAM groups and policies 
 ![Profile Image](/images/ch13.png)
 
                                Data Analysts (3 Users)
+                               
 •	Access: S3 (read-only) and database (read-only).
 
 •	Setup: Similar process as developers, with customized policies for the analysts' needs.
