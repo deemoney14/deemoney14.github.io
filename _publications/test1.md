@@ -17,7 +17,8 @@ StartupCo, a fast-growing tech startup, recently launched a fitness tracking app
 
                                     Current Setup
 
-                              Current Infrastructure
+                                  Current Infrastructure
+                              
                         •	Everyone uses the root account.                          •	No separate permissions for different teams.
                         •	No MFA or password policies.                             •	AWS credentials are shared via team chat.
                         •	Infrastructure includes:                                 o	EC2 instances running the application.
