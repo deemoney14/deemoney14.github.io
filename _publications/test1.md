@@ -55,6 +55,7 @@ The fitness app is now accessed exclusively through the ALB, which routes traffi
                                     3. Secure Secrets Management
                                     
 Previously, I included database credentials directly in the application code. 
+
 To improve security, I implemented AWS Secrets Manager to store sensitive information securely. Credentials are decoded dynamically using:
 
 ```jsondecode(aws_secretsmanager_Secret_version.<name_your_cred>.secret_string)```
@@ -65,6 +66,7 @@ To improve security, I implemented AWS Secrets Manager to store sensitive inform
                                  4. Configuring S3 and CloudWatch in the VPC
                                  
 To enhance security and monitoring, I configured:
+
 •	S3: Created an S3 bucket and an Endpoint Gateway, then connected it to the private route table via route_table_ids.
 
 •	IAM Role for EC2: Created a policy to allow S3 and CloudWatch access. I also added an Instance Profile to EC2 with full permissions for S3.
@@ -77,7 +79,9 @@ To enhance security and monitoring, I configured:
                       Step 3: Identity and Access Management (IAM)
                       
 To establish least privilege access, I created specific IAM groups and policies for each team:
+
                                  Developers (4 Users)
+                                 
 •	Access: EC2, S3, and CloudWatch Logs (viewing only).
 
 •	Setup: Created an aws_iam_group and used locals to streamline usernames. Attached the policy to the group based on AWS documentation.
