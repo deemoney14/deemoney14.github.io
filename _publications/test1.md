@@ -51,13 +51,17 @@ The fitness app is now accessed exclusively through the ALB, which routes traffi
 ![Profile Image](/images/ch4.png)
 ![Profile Image](/images/ch5.png)
 ![Profile Image](/images/ch6.png)
+
                                     3. Secure Secrets Management
+                                    
 Previously, I included database credentials directly in the application code. 
 To improve security, I implemented AWS Secrets Manager to store sensitive information securely. Credentials are decoded dynamically using:
 ```jsondecode(aws_secretsmanager_Secret_version.<name_your_cred>.secret_string)```
 ![Profile Image](/images/ch7.png)
 ![Profile Image](/images/ch8.png)
+
                                  4. Configuring S3 and CloudWatch in the VPC
+                                 
 To enhance security and monitoring, I configured:
 •	S3: Created an S3 bucket and an Endpoint Gateway, then connected it to the private route table via route_table_ids.
 
@@ -78,12 +82,14 @@ To establish least privilege access, I created specific IAM groups and policies 
 ![Profile Image](/images/ch11.png)
 ![Profile Image](/images/ch12.png)
 ![Profile Image](/images/ch13.png)
+
                                Data Analysts (3 Users)
 •	Access: S3 (read-only) and database (read-only).
 
 •	Setup: Similar process as developers, with customized policies for the analysts' needs.
 ![Profile Image](/images/ch14.png)
 ![Profile Image](/images/ch15.png)
+
                                 Finance Team (1 User)
                                 
 •	Access: Cost Explorer, AWS Budget, and read-only resource access.
@@ -91,6 +97,7 @@ To establish least privilege access, I created specific IAM groups and policies 
 •	Setup: Configured policies for cost management. Finding the correct read-only policies required additional research due to limited documentation.
 ![Profile Image](/images/ch16.png)
 ![Profile Image](/images/ch17.png)
+
                              Operations Team (2 Users)
                              
 •	Access: Full permissions for EC2, CloudWatch, Systems Manager, and RDS.
@@ -98,6 +105,7 @@ To establish least privilege access, I created specific IAM groups and policies 
 •	Setup: Attached full permissions directly to the iam_group_policy_attachment for simplicity.
 ![Profile Image](/images/ch18.png)
 ![Profile Image](/images/ch19.png)
+
                       MFA and Strong Password Policies
                       
 Finally, I enforced MFA for all users and implemented a strong password policy:
@@ -107,6 +115,7 @@ Finally, I enforced MFA for all users and implemented a strong password policy:
 •	Strict password requirements ensure enhanced account security.
 ![Profile Image](/images/ch20.png)
 ![Profile Image](/images/ch21.png)
+
                         Reflection and Learning Outcomes
                         
 This project allowed me to explore key AWS identity management and security practices:
