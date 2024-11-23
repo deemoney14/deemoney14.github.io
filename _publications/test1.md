@@ -18,11 +18,11 @@ StartupCo, a fast-growing tech startup, recently launched a fitness tracking app
                                     Current Setup
 
                               Current Infrastructure
-•	Everyone uses the root account.                          •	No separate permissions for different teams.
-•	No MFA or password policies.                             •	AWS credentials are shared via team chat.
-•	Infrastructure includes:                                 o	EC2 instances running the application.
-o	S3 buckets storing user data and application assets.     o	RDS database for user information.
-o	CloudWatch for monitoring several development and production environments.
+                        •	Everyone uses the root account.                          •	No separate permissions for different teams.
+                        •	No MFA or password policies.                             •	AWS credentials are shared via team chat.
+                        •	Infrastructure includes:                                 o	EC2 instances running the application.
+                        o	S3 buckets storing user data and application assets.     o	RDS database for user information.
+                         o	CloudWatch for monitoring several development and production environments.
 ________________________________________
 Step 1: Drawing the Current Infrastructure
 ![Profile Image](/images/Pc2.png)
