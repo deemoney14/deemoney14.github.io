@@ -21,21 +21,27 @@ Project Objectives
 o	Scale up when CPU utilization exceeds 70%.
 o	Scale down when CPU utilization falls below 30%.
 
-7.	Design a ```fault-tolerant and scalable architecture``` using two Availability Zones (AZ) and three subnets. PIC 1
+7.	Design a ```fault-tolerant and scalable architecture``` using two Availability Zones (AZ) and three subnets.
+   ![Profile Image](/images/t1.png)
 
                                  	Implementation Steps
   	
 1. VPC and Networking Setup
     
 The foundation of this project began with creating the Virtual Private Cloud (VPC) to establish a scalable and secure networking environment:
+
 •	Subnets: Deployed across two Availability Zones (AZs) with three subnets (two public and one private).
+
 •	Internet Gateway (IGW): Enabled internet access for resources in the public subnets.
+
 •	NAT Gateway: Configured to allow instances in private subnets to access the internet securely, such as for updates and software installation.
 
 3. Application Load Balancer (ALB)
    
 To manage incoming traffic, I set up an Application Load Balancer:
+
 •	Placement: Configured in the public subnet to route traffic to backend servers.
+
 •	Integration: Linked with the Auto Scaling Group (ASG) to dynamically distribute traffic to healthy instances.
 
 4.	Launch Template
@@ -51,7 +57,8 @@ yum install -y nginx
 systemctl start nginx 
 systemctl enable nginx
 
-Lesson Learned: Without base64 encoding, the user data script failed to execute correctly, highlighting the importance of proper formatting. pic 2
+Lesson Learned: Without base64 encoding, the user data script failed to execute correctly, highlighting the importance of proper formatting. 
+ ![Profile Image](/images/t2.png)
 
 4. Auto Scaling Group (ASG)
    
@@ -59,15 +66,22 @@ The ASG was configured to maintain high availability for the application:
 
 •	Placement: Initially deployed in the public subnet (with the ALB), which caused misconfiguration issues. I later corrected it to reside in the private subnets, as the ASG manages the backend servers hosting NGINX.
 
-•	Integration: Designed to work seamlessly with the ALB, enabling dynamic scaling based on traffic. PIC 3
-
+•	Integration: Designed to work seamlessly with the ALB, enabling dynamic scaling based on traffic. 
+ ![Profile Image](/images/t3.png)
 
 5. CloudWatch Alarms
    
 To enable dynamic scaling, I set up two CloudWatch alarms:
+
 •	Scale Up: Triggers when CPU utilization exceeds 70%, adding one instance to the ASG
-•	Scale Down: Triggers when CPU utilization drops below 40%, removing one instance from the ASG.
+ ![Profile Image](/images/t4.png)
+
+•	Scale Down: Triggers when CPU utilization drops below 30%, removing one instance from the ASG.
+ ![Profile Image](/images/t5.png)
+
 •	Policies: Both alarms were configured with simple scaling policies to adjust the ASG instance count dynamically.
+ ![Profile Image](/images/t6.png)
+  ![Profile Image](/images/t7.png)
 
                                           Challenges and Lessons Learned
                                           
