@@ -1,5 +1,5 @@
 ---
-title: "Auto Scaling for High Availability and Scalability"
+title: " Porject 6: Auto Scaling for High Availability and Scalability"
 collection: Projects
 category: conferences
 permalink: /publication/2024-02-17-paper-title-number-4
