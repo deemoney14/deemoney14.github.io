@@ -67,6 +67,7 @@ The ASG was configured to maintain high availability for the application:
 •	Placement: Initially deployed in the public subnet (with the ALB), which caused misconfiguration issues. I later corrected it to reside in the private subnets, as the ASG manages the backend servers hosting NGINX.
 
 •	Integration: Designed to work seamlessly with the ALB, enabling dynamic scaling based on traffic. 
+ 
  ![Profile Image](/images/t3.png)
 
 5. CloudWatch Alarms
@@ -77,9 +78,11 @@ To enable dynamic scaling, I set up two CloudWatch alarms:
  ![Profile Image](/images/t4.png)
 
 •	Scale Down: Triggers when CPU utilization drops below 30%, removing one instance from the ASG.
+
  ![Profile Image](/images/t5.png)
 
 •	Policies: Both alarms were configured with simple scaling policies to adjust the ASG instance count dynamically.
+ 
  ![Profile Image](/images/t6.png)
   ![Profile Image](/images/t7.png)
 
