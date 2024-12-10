@@ -26,7 +26,7 @@ Print the Repository Name:
 This step uses the ```${{ github.repository }}``` variable to fetch and display the name of the repository where the workflow is running.
 
 Although it was a simple concept, it demonstrated the foundational workings of GitHub Actions, and I gained hands-on experience with creating workflows triggered by repository events.
-pic 1
+![Profile Image](/images/gh1.png)
 
                                                     Part 2: Deploying an AWS Lambda Function
 
@@ -68,7 +68,12 @@ This workflow is designed to deploy an AWS Lambda function whenever changes are 
 6.	Deploy Lambda Function:
 o	Zips the contents of the lambda/ directory.
 o	Uses the AWS CLI to update the Lambda function's code with the newly zipped file.
-pic 2 and 3
+
+```lambda.yaml```
+![Profile Image](/images/gh2.png)
+
+```lambda_function```
+![Profile Image](/images/gh3.png)
 
 
                                                            Reflection
