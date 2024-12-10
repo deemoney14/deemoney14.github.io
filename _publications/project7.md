@@ -16,7 +16,8 @@ This project focused on building and deploying a simple CI/CD pipeline using Git
                                        
 In the first phase, I created a simple workflow file in YAML. This workflow was designed to trigger whenever I pushed changes to my repository. The runner was configured to use the latest version of Ubuntu, and I included two basic steps in this workflow:
 
-                                                             Steps:
+                                                Steps:
+						
 Print a Greeting:
 
 This step outputs ```Hello, GitHub Action``` to the console.
