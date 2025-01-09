@@ -13,7 +13,9 @@ venue: 'Jan'
 
                                  
 Welcome to Day 1 of my 30-day development journey! In this project, I’ll demonstrate how to build an OpenWeather API integration with AWS S3. This project is a great opportunity to apply DevOps principles such as automation, error handling, and cloud infrastructure integration.
-   
+
+
+![Profile Image](/images/hh1.png)
                            
                       The system:
                       
