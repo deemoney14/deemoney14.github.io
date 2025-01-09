@@ -2,7 +2,7 @@
 title: " Porject 7: CI/CD Pipeline"
 collection: Projects
 category: conferences
-permalink: /publication/2024-02-17-paper-title-number-4
+permalink: /publication/2024-02-31-paper-title-number-4
 excerpt: 'This project is about understanding the foundation of CI/CD '
 date: 2024-10-20
 venue: 'December'
