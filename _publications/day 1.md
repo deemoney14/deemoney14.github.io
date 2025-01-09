@@ -53,6 +53,8 @@ Run the Python script to fetch weather data for predefined cities and upload it 
                 4.	Checking the AWS S3 Bucket 
 
 Verify the data stored in your AWS S3 bucket. The weather data will be organized in JSON format with timestamps.
+
+
 ![Profile Image](/images/hh5.png)
 
                        Tools and Technologies
