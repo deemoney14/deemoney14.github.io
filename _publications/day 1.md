@@ -3,7 +3,7 @@ title: " 30-DAY DEV PROJECT: DAY-1"
 collection: Projects
 category: conferences
 permalink: /publication/2024-10-20-paper-title-number-4
-excerpt: ' '
+excerpt: 'This project fetches weather data using the OpenWeather API and stores it in AWS S3. '
 date: 2024-10-20
 venue: 'Jan'
 #paperurl: 'http://academicpages.github.io/files/paper3.pdf'
