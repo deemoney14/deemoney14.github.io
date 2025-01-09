@@ -2,7 +2,7 @@
 title: " Porject 6: Auto Scaling for High Availability and Scalability"
 collection: Projects
 category: conferences
-permalink: /publication/2024-02-17-paper-title-number-4
+permalink: /publication/2024-01-12-paper-title-number-4
 excerpt: 'This project is about Deploying Wordpress server on EC2 '
 date: 2024-10-20
 venue: 'November'
