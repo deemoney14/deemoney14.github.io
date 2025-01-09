@@ -2,7 +2,7 @@
 title: " 30-DAY DEV PROJECT: DAY-1"
 collection: Projects
 category: conferences
-permalink: /publication/2024-02-17-paper-title-number-4
+permalink: /publication/2024-10-20-paper-title-number-4
 excerpt: ' '
 date: 2024-10-20
 venue: 'Jan'
