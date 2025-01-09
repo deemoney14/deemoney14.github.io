@@ -2,7 +2,7 @@
 title: "Project 5:  Identity Management at StartupCo"
 collection: publications
 category: manuscripts
-#permalink: /publication/2009-10-01-paper-title-number-1
+#permalink: /publication/2009-11-01-paper-title-number-1
 excerpt: 'Objective: Deploy a WordPress website in a secure and scalable manner using a three-tier architecture. This setup includes a Load Balancer, Target Groups, EC2 Instances, RDS Database, VPC, and a Bastion Host, all provisioned using Terraform.'
 date: 2024-10-01
 venue: 'November'
