@@ -12,7 +12,7 @@ venue: 'Jan'
 
                                  Introduction
 Welcome to Day 1 of my 30-day development journey! In this project, I’ll demonstrate how to build an OpenWeather API integration with AWS S3. This project is a great opportunity to apply DevOps principles such as automation, error handling, and cloud infrastructure integration.
- 
+    ![Profile Image](/images/hh1.png)
                       The system:
 •	Fetch real-time weather data for multiple cities.
 •	Display key metrics, including temperature (°F), humidity, and weather conditions.
@@ -34,10 +34,14 @@ o	Uploading weather data to an AWS S3 bucket.
                      3.	Running the Script 
 
 Run the Python script to fetch weather data for predefined cities and upload it to AWS S3.
+![Profile Image](/images/hh2.png)
+![Profile Image](/images/hh3.png)
+![Profile Image](/images/hh4.png)
 
                 4.	Checking the AWS S3 Bucket 
 
 Verify the data stored in your AWS S3 bucket. The weather data will be organized in JSON format with timestamps.
+![Profile Image](/images/hh5.png)
 
                        Tools and Technologies
 •	Version Control: Git
@@ -54,6 +58,7 @@ During setup, I encountered a few challenges:
 
                                                      Final Thoughts
 This sample project emphasized the need to refresh my Python skills. Starting a new project is always exciting, but it also comes with its challenges. I’m eager to see how much I can learn and accomplish over the next 30 days.
+![Profile Image](/images/hh6.png)
 
 
                                        
