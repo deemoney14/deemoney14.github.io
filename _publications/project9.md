@@ -25,16 +25,21 @@ Tech Health Inc. has been managing its infrastructure manually through the AWS C
   ![Profile Image](/images/oo4.png)
 
 o	Avoided using NAT Gateways as a cost-saving measure.
+
 o	Made sure to destroy resources after testing to avoid unnecessary charges.
 
                                           AWS Best Practices Implemented:
                                           
 ```•	Network Design:``` I ensured proper segregation of public and private subnets, with sensitive resources like RDS placed in the private subnet.
 
-•	Security:
+```•	Security:```
+
 o	No direct public access to the RDS database.
+
 o	Restricted EC2 SSH access to my IP for secure access.
+
 o	Stored database credentials securely using AWS Secrets Manager.
+
 o	Used security groups instead of NACLs for more granular control over network traffic. 
  ![Profile Image](/images/oo5.png)
   ![Profile Image](/images/oo6.png)
@@ -45,8 +50,11 @@ IAM Roles & Policies: I set up IAM roles for the EC2 instances to interact with 
                                                             Lessons Learned:
                                                             
 ```•	Modularization:``` Setting up infrastructure with modules greatly simplified the process. By reusing modules for components like VPC, EC2, and RDS, I can easily manage and scale the infrastructure as needed.
+
 ```•	Security Focus:``` It’s crucial to limit access and follow the principle of least privilege when configuring security groups and IAM roles.
+
 ```•	Cost Management:``` Opting for the smallest EC2 and RDS instances (t2.micro and db.t3.micro) helped keep costs low while still providing the necessary resources for the patient portal.
+
 ```•	Automation:``` IaC allows for more consistent and repeatable deployments. The infrastructure can be destroyed and recreated easily, ensuring a clean environment for testing and deployment.
  ![Profile Image](/images/oo8.png)
   ![Profile Image](/images/oo9.png)
